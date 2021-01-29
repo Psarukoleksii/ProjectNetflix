@@ -1,0 +1,21 @@
+.form-wrapper .form-item form input{
+    width: 18rem;
+    height: 1.5rem;
+    border-radius: .2rem;
+}
+
+.form-wrapper .form-item form img{
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+.form-wrapper .form-item form button{
+    border: none;
+    background: none;
+}
+
+.form-wrapper .form-item form{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}

@@ -1,0 +1,35 @@
+.film-item{
+    width: 25%;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+}
+
+.film-item a{
+    color: white;
+    text-decoration: none;
+    border: 1px solid darkcyan;
+    padding: 0.4rem 1rem;
+    background: slategrey;
+}
+
+.film-item .film-kard-text h2{
+    color: darkcyan;
+    text-align: center;
+}
+
+.film-item .film-kard-text img{
+    width: 50%;
+    display: block;
+    margin: 0.5rem auto;
+}
+
+.film-item a:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+}

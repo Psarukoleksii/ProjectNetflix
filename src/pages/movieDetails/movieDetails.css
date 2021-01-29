@@ -1,0 +1,32 @@
+.detailsOfMoviePhoto img{
+    width: 60%;
+    display: block;
+    border-radius: 0.2rem;
+}
+
+.detailsSection{
+    margin-top: 3rem;
+    margin-left: 20%;
+    margin-right: 8%;
+}
+
+.detailsOfMovieInformation img{
+    width: 1.5rem;
+}
+
+.details-wrapper{
+    margin-right: 25%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.details-wrapper .details-poster{
+    flex: 3;
+}
+.details-wrapper .details-average{
+    flex: 1;
+}
+.commentsSection{
+
+}

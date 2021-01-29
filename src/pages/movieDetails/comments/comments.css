@@ -1,0 +1,15 @@
+.form-section-for-comments form input{
+    display: block;
+    width: 40%;
+}
+
+.form-section-for-comments form button{
+    margin-top: 1rem;
+    padding: 0.7rem 1.1rem;
+    cursor: pointer;
+}
+
+.form-section-for-comments form button:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+}
