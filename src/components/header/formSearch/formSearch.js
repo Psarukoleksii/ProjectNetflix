@@ -1,27 +1,32 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {useDispatch} from "react-redux";
 import {moviesService} from "../../../services";
 import {toFindFilm} from "../../../redux/action-creator/actCreators";
 import './formSearch.css';
+import {Link} from "react-router-dom";
+import icoSearch from './icoSearch.png';
 
-export const FormSearch = () =>{
+export const FormSearch = () => {
     const dispatch = useDispatch();
+    const inputEl = useRef(null);
 
-    const handFindFilm = async (e) =>{
-        e.preventDefault();
-        const filmSearch = e.target[0].value;
+    const handFindFilm = async () => {
+        const filmSearch = inputEl.current.value;
         const filmsListForFilter = await moviesService.getAllMovies();
-        const data = filmsListForFilter.results.filter((value)=> value.original_title === filmSearch);
-        e.target[0].value = '';
+        const data = filmsListForFilter.results.filter((value) => value.original_title === filmSearch);
+        inputEl.current.value = '';
         dispatch(toFindFilm(data))
     }
 
-    return(
+
+    return (
         <div className={'form-wrapper'}>
             <div className={'form-item'}>
-                <form onSubmit={handFindFilm}>
-                    <input type="text"/>
-                    <button><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKzljVszZUDkHXBtnICfsL6V1L3ht6cgWMlQ&usqp=CAU" alt="searchIco"/></button>
+                <form>
+                    <input type="text" ref={inputEl}/>
+                    <Link to={'/filmSearch'} onClick={handFindFilm}><img
+                        src={icoSearch}
+                        alt="searchIco"/></Link>
                 </form>
             </div>
         </div>

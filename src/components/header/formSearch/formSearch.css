@@ -1,7 +1,10 @@
 .form-wrapper .form-item form input{
     width: 18rem;
-    height: 1.5rem;
+    height: 1.3rem;
     border-radius: .2rem;
+    border: 2px solid white;
+    background: #281f55;
+    color: white;
 }
 
 .form-wrapper .form-item form img{
@@ -18,4 +21,8 @@
     display: flex;
     align-items: center;
     justify-content: left;
+}
+
+.form-wrapper .form-item a{
+    margin-left: 0.5rem;
 }

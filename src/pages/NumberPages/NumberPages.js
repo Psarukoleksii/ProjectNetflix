@@ -28,9 +28,9 @@ export const NumberPages = ({currentPage, totalPages, onNextClick, onPrevClick, 
         <div className={'numberPagesSection'}>
             <div className={'numberPagesItem'}>
                 <button onClick={handFirstPage}>First page</button>
-                <button onClick={handPrevClick}>PrevPage</button>
+                <button onClick={handPrevClick}>Prev Page</button>
                 <span>{currentPage} of {totalPages}</span>
-                <button onClick={handNextClick}>NextPage</button>
+                <button onClick={handNextClick}>Next Page</button>
                 <button onClick={handLastPage}>Last page</button>
             </div>
         </div>

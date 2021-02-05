@@ -1,0 +1,40 @@
+.detailsOfMoviePhoto img{
+    width: 60%;
+    display: block;
+    border-radius: 0.2rem;
+}
+
+.detailsSection{
+    margin-top: 3rem;
+    margin-left: 10%;
+    margin-right: 8%;
+    color: white;
+}
+
+.detailsOfMovieInformation img{
+    width: 1.1rem;
+    margin: 0 0.7%;
+}
+
+.details-wrapper{
+    margin-right: 25%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.details-wrapper .details-poster{
+    flex: 3;
+    padding-left: 5%;
+}
+.details-wrapper .details-average{
+    flex: 1;
+}
+
+.details-wrapper .details-average button{
+    background: #f8104d;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.6rem;
+    cursor: pointer;
+}

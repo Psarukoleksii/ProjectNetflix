@@ -1,0 +1,12 @@
+.genresSection{
+    text-align: center;
+    margin: 2rem 10%;
+    border-radius: 0.3rem;
+    padding: 1.2rem;
+    background: #1e1841;
+}
+
+.genresSection h2{
+    color: white;
+    margin: 0.5rem;
+}

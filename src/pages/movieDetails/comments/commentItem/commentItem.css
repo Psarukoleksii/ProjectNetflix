@@ -3,6 +3,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background: #1e1841;
+    padding-left: 1%;
+    border-radius: 0.3rem;
+    margin-bottom: 1%;
 }
 
 .commentsList .comment-item-photo{

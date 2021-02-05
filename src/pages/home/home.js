@@ -5,20 +5,23 @@ import {NumberPages} from "../NumberPages";
 import {useDispatch, useSelector} from "react-redux";
 import {setFilms} from "../../redux/action-creator/actCreators";
 import './home.css';
-import {SortFilms} from "../../components/SortFilms";
+import {GenresItem} from "../../components/genresList/genresItem";
+import {Loading} from "../../components/Loading";
+import {HomeItem} from "./homeItem";
 
 
 export const Home = () => {
     const dispatch = useDispatch();
     const {filmsList} = useSelector(({films: {filmsList}}) => ({filmsList}))
-    const {findFilm} = useSelector(({films: {findFilm}}) => ({findFilm}))
 
     let [moviesData, setMoviesData] = useState(null);
+    let [loading, setLoading] = useState(true);
 
 
     const fetchData = async (params) => {
         const {page, results, total_pages, total_results} = await moviesService.getAllMovies(params);
         setMoviesData({page, total_results, total_pages})
+        setLoading(false);
         return results;
     }
 
@@ -38,39 +41,25 @@ export const Home = () => {
             }
         })
         dispatch(setFilms(mapMovies));
+        setLoading(false)
     }
 
     useEffect(() => {
         fetchMoviesData()
     }, [])
 
-
     const handChangePage = (page) => {
         fetchMoviesData({page})
     }
 
-    const data = findFilm.length === 1 ? <MovieList items={findFilm} key={findFilm.id}/> :
-        <div>
-            <MovieList items={filmsList} key={filmsList.id}/>;
-            {
-                moviesData && <NumberPages
-                    currentPage={moviesData.page}
-                    totalPages={moviesData.total_pages}
-                    onPrevClick={handChangePage}
-                    onNextClick={handChangePage}
-                    onFirstPage={handChangePage}
-                    onLastPage={handChangePage}
-                />
-            }
-        </div>
-
+    const icoLoading = loading ? <Loading /> : null;
+    const listFilm = filmsList ? <HomeItem handChangePage={handChangePage} moviesData={moviesData} filmsList={filmsList}/> : null;
 
     return (
-        <div className={'flex-container'}>
-            <div>
-                <SortFilms />
-            </div>
-            {data}
+        <div>
+            {icoLoading}
+            {listFilm}
         </div>
+
     )
 }

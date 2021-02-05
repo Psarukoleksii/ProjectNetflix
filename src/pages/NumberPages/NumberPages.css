@@ -7,10 +7,14 @@
     margin: 1rem;
 }
 
+.numberPagesItem span{
+    color: white;
+}
+
 .numberPagesItem button {
     padding: 0.7rem 1.2rem;
     margin: 0.5rem;
-    background: darkslategrey;
+    background: #f8104d;
     color: white;
     border: none;
     border-radius: 0.3rem;

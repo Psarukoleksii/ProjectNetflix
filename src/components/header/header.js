@@ -1,18 +1,23 @@
 import React from 'react';
 import './header.css';
 import {FormSearch} from "./formSearch";
+import {Link} from "react-router-dom";
+import icoSaved from './icoSaved.png';
 
 export const Header = () =>{
-
 
     return (
         <div className={'headerSection'}>
             <div className={'icoHeader'}>
-                <a href="/"><img src="https://i.pinimg.com/736x/aa/f7/05/aaf705e06726ce3881288ae4be3ac5fe.jpg" alt=""/></a>
-                <a href="/"><h1>NETFLIX</h1></a>
+                <Link to={'/'}>NETFLIX</Link>
             </div>
             <div className={'formSection'}>
-                <FormSearch />
+                <div className={'formSectionItem'}>
+                    <FormSearch />
+                </div>
+                <div className={'savedFilmsSection'}>
+                    <Link to={'/wishFilms'}><img src={icoSaved} alt="icoSaved"/></Link>
+                </div>
             </div>
         </div>
     )

@@ -1,0 +1,28 @@
+.footerWrapper{
+    height: 5rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background: #1e1841;
+    padding: 2%;
+}
+
+.footerWrapper .footerIcons img{
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-right: 1rem;
+}
+
+.footerWrapper .footerIcons{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.footerWrapper .footerInfo{
+    color: white;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+}
