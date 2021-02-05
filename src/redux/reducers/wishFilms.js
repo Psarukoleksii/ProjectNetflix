@@ -9,7 +9,6 @@ export const wishFilms = (state = initialState, action) =>{
         case WISH_FILM:{
             let arr = [...state.wishFilms];
             arr.unshift(action.payload);
-            console.log(arr);
             return {...state, wishFilms: arr}
         }
         case DELETE_FILM:{

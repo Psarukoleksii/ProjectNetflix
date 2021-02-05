@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import {moviesService} from "../../../services";
 import {MovieList} from "../../MovieList";
 import {Loading} from "../../Loading";
+import {PageNotFound} from "../../../pages/pageNotFound";
 
 export const GenreFilms = () =>{
     const {id} = useParams();
@@ -24,8 +25,10 @@ export const GenreFilms = () =>{
 
     const icoLoading = loading ? <Loading /> : null
     const filmsWithWishGenres = !loading ? <MovieList items={state}/> : null;
+    const filmsNotFound = state.length === 0 && !loading ? <PageNotFound /> : null;
     return(
         <div>
+            {filmsNotFound}
             {icoLoading}
             {filmsWithWishGenres}
         </div>

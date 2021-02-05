@@ -8,11 +8,13 @@ import './home.css';
 import {GenresItem} from "../../components/genresList/genresItem";
 import {Loading} from "../../components/Loading";
 import {HomeItem} from "./homeItem";
+import {PageNotFound} from "../pageNotFound";
 
 
 export const Home = () => {
     const dispatch = useDispatch();
     const {filmsList} = useSelector(({films: {filmsList}}) => ({filmsList}))
+    console.log(filmsList);
 
     let [moviesData, setMoviesData] = useState(null);
     let [loading, setLoading] = useState(true);

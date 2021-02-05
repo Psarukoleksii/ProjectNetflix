@@ -1,0 +1,8 @@
+.notFoundWrapper h2{
+    text-align: center;
+    color: white;
+}
+
+.notFoundWrapper{
+    margin-top: 5rem;
+}
