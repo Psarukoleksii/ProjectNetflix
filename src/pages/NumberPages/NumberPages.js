@@ -3,6 +3,8 @@ import './NumberPages.css';
 
 export const NumberPages = ({currentPage, totalPages, onNextClick, onPrevClick, onFirstPage, onLastPage}) =>{
 
+    console.log(totalPages)
+    console.log(currentPage);
     const handNextClick = () =>{
         if(currentPage + 1 < totalPages){
             onNextClick && onNextClick(currentPage + 1)

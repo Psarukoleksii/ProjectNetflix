@@ -7,7 +7,7 @@ export const SavedFilms = () =>{
 
     const {wishFilms} = useSelector(({wishFilms})=> ({wishFilms}))
 
-    const saveFilms = wishFilms.length >= 1? wishFilms.wishFilms.map(items=> <MovieItem value={items}/>) : <PageNotFound />
+    const saveFilms = wishFilms.wishFilms.length >= 1 ? wishFilms.wishFilms.map(items=> <MovieItem value={items}/>) : <PageNotFound />
     return(
         <div>
             {saveFilms}

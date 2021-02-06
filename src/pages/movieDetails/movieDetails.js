@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {moviesService} from "../../services";
 import './movieDetails.css';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {deleteFilm, wishFilm} from "../../redux/action-creator/actCreators";
 import {success} from "../../config";
 import {Loading} from "../../components/Loading";
@@ -23,8 +23,19 @@ export const MovieDetails = () => {
 
     useEffect(() => {
         getOneMovie()
+        isFilmInWishFilms()
     }, [])
 
+
+    const {wishFilms} = useSelector(({wishFilms})=> ({wishFilms}));
+    const isFilmInWishFilms = () =>{
+        const asd = wishFilms.wishFilms.map(value=> value.id)
+        for(let elem of asd){
+            if(elem == id){
+                setButton(false);
+            }
+        }
+    }
 
     const handAddToWishFilms = async () => {
         const data = await moviesService.getMovieById(id);

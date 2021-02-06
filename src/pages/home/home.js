@@ -14,7 +14,6 @@ import {PageNotFound} from "../pageNotFound";
 export const Home = () => {
     const dispatch = useDispatch();
     const {filmsList} = useSelector(({films: {filmsList}}) => ({filmsList}))
-    console.log(filmsList);
 
     let [moviesData, setMoviesData] = useState(null);
     let [loading, setLoading] = useState(true);
@@ -53,6 +52,7 @@ export const Home = () => {
     const handChangePage = (page) => {
         fetchMoviesData({page})
     }
+
 
     const icoLoading = loading ? <Loading /> : null;
     const listFilm = filmsList ? <HomeItem handChangePage={handChangePage} moviesData={moviesData} filmsList={filmsList}/> : null;
